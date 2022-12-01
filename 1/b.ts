@@ -7,7 +7,6 @@ let runningTotal = new Set<number>();
 let localMax = 0;
 
 const solutionB = (formattedInput) => {
-  console.log(formattedInput);
   formattedInput.map((item) => {
     if (item === "\n" || item === "\r" || item === "") {
       runningTotal.add(localMax);
