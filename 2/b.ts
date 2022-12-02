@@ -44,7 +44,6 @@ enum Resolution {
 
 const outcome = (opponent: string, me: string): number => {
     const game = opponent + " " + me
-
     return Number(Resolution[game] + PlayScore[me])
 }
 
@@ -63,8 +62,6 @@ const solutionB = (formattedInput) => {
         let me = round[2]
 
         let strategicGame = ReverseResolution(Strategy[me], Options[opponent])[0]
-
-
         let [newOpponent, newMe] = strategicGame[0].split(" ")
 
         runningTotal += outcome(newOpponent, newMe)
