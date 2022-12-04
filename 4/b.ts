@@ -23,7 +23,6 @@ const solutionB = (formattedInput: string[]) => {
         if ((aEnd < bStart || bEnd < aStart) && (aEnd !== bStart || bEnd !== aStart)) {
         }
         else {
-            console.log(line)
             containedCount += 1
         }
     })
