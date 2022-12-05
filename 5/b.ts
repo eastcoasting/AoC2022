@@ -63,24 +63,19 @@ const solutionB = (formattedInput: string[]) => {
     for (let i = 0; i < moves.length; i++) {
 
         let [numberOfMoves, initialPlace, finalPlace] = translateMove(moves[i])
-
         let combinedMove = []
-
 
         for (let j = 0; j < +numberOfMoves; j++) {
             combinedMove.push(stackMap.get(+initialPlace).pop())
         }
 
         combinedMove = combinedMove.reverse()
-
         combinedMove.map((move) => {
             stackMap.get(+finalPlace).push(move)
         })
     }
 
     let answer = []
-
-    console.log(stackMap)
 
     stackMap.forEach((column) => {
         let lastItem = column.pop()
