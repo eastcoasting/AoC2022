@@ -42,7 +42,6 @@ const extractStacks = (formattedInput: string[]): [Map<number, string[]>, number
     }
 
     stackMap.forEach((value, key, map) => {
-
         if (value.length === 0) {
             stackMap.delete(key);
         }
@@ -53,7 +52,6 @@ const extractStacks = (formattedInput: string[]): [Map<number, string[]>, number
 
 
 const translateMove = (move: string) => {
-
     return move.replace("move", "").replace("from", "").replace("to", "").replace("\r", "").split(" ").filter((option) => { return option !== "" })
 }
 
@@ -62,12 +60,9 @@ const solutionA = (formattedInput: string[]) => {
 
     let moves = formattedInput.splice(positionOfMoves)
 
-    console.log(stackMap)
     for (let i = 0; i < moves.length; i++) {
 
         let [numberOfMoves, initialPlace, finalPlace] = translateMove(moves[i])
-
-        console.log("move", numberOfMoves, "from", initialPlace, "to", finalPlace)
 
         for (let j = 0; j < +numberOfMoves; j++) {
             const itemToMove = stackMap.get(+initialPlace).pop()
